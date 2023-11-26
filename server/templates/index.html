@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="jumbotron">
+            <h1 class="display-4">게임 통계 대시보드</h1>
+            <p class="lead">플레이어 정보 및 게임 정보를 조회하세요.</p>
+        </div>
+        <form method="POST" action="/player_info">
+            <div class="form-group">
+                <label for="player_name">플레이어 이름:</label>
+                <input type="text" class="form-control" id="player_name" name="player_name" required>
+            </div>
+            <button type="submit" class="btn btn-primary">조회</button>
+        </form>
+        {% block content %}
+        <div>
+            {{ content|safe }}
+        </div>
+        {% endblock %}  <!-- Placeholder for dynamic content -->
+    </div>
+</body>
+</html>
